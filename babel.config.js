@@ -23,6 +23,7 @@ const MODULE_RESOLVER = [
       "@lib-rn-uicore": "./src/lib/rn-uicore",
       "@lib-rn-action": "./src/lib/rn-action",
       "@lib-rn-uipattern": "./src/lib/rn-uipattern",
+      "@lib-rn-utils": "./src/lib/rn-utils",
 
     }
   },
