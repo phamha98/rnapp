@@ -12,10 +12,13 @@ import {
   StatusBar,
 } from 'react-native';
 import { Icon } from 'react-native-elements';
-import { navigate } from '@navigation';
+import { navigate } from '@config/navigation';
+import { useNavigation } from '@react-navigation/native';
 export default function LoginScreen1() {
+  const navigation=useNavigation()
     const handleLogin=()=>{
-        navigate("Weather")
+      console.log('123')
+      navigation.navigate("screen_details")
     }
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>

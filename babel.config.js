@@ -20,10 +20,10 @@ const MODULE_RESOLVER = [
       "@module-saga": "./src/module/saga",
 
 
-      "@lib-rn-uicore": "./src/lib/rn-uicore",
-      "@lib-rn-action": "./src/lib/rn-action",
-      "@lib-rn-uipattern": "./src/lib/rn-uipattern",
-      "@lib-rn-utils": "./src/lib/rn-utils",
+      // "@lib-rn-uicore": "./src/lib/rn-uicore",
+      // "@lib-rn-action": "./src/lib/rn-action",
+      // "@lib-rn-uipattern": "./src/lib/rn-uipattern",
+      // "@lib-rn-utils": "./src/lib/rn-utils",
 
     }
   },

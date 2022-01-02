@@ -10,7 +10,6 @@ import {
   Dimensions,
 } from 'react-native';
 import { Icon } from 'react-native-elements';
-
 export default function InstagramClone({ navigation }) {
   // Font Downlaod Link
   // https://www.cufonfonts.com/font/billabong
