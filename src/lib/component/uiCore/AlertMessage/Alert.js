@@ -1,9 +1,8 @@
 import React, {useEffect,useState} from 'react'
 import PropTypes from 'prop-types'
 import {isFunction, isNumber} from 'underscore'
-import {TextCore, TouchableCore, ViewCore} from '../../uiCore'
+import {TextCore, TouchableCore, ViewCore,FSIZE} from './index'
 import {Modal, Text} from 'react-native'
-import {FSIZE} from 'src/res/fontSize'
 export const ALERTCONTENTWIDTH = 80
 export const ALERTBUTTONWIDTH = 70
 export const ALERTCOLOR = '#C2C1C1'

@@ -1,10 +1,4 @@
-import {
-  IconCoreC,
-  ViewCoreC,
-  TextCoreC,
-  ImageCoreC,
-  InputCoreC,
-} from '@lib/component'
+import {IconCoreC, ViewCoreC, TextCoreC, ImageCoreC} from '@lib/component'
 import React from 'react'
 import {Alert, StyleSheet, Text, View, ViewStyle} from 'react-native'
 
@@ -36,7 +30,6 @@ const screen_details = () => {
         {'sa'}
       </TextCoreC>
       <ImageCoreC resizeMode='contain' width={200} borderRadius={100} />
-      <InputCoreC   />
     </ViewCoreC>
   )
 }

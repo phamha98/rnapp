@@ -9,7 +9,7 @@ import {
   ColorValue
 } from 'react-native';
 import {StyleSheet, Text, View,} from 'react-native'
-import {rnColor} from './color'
+import {rnColor} from './res/color'
 interface PropsViewCore extends ViewStyle {
   children?: React.ReactNode
   width?: number | string

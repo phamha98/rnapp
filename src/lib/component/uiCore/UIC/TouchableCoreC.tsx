@@ -1,6 +1,6 @@
 import React from 'react'
 import {StyleSheet, Text, TouchableOpacity, ViewStyle} from 'react-native'
-import {rnColor} from './color'
+import {rnColor} from './res/color'
 interface PropsViewCore extends ViewStyle {
   children?: React.ReactNode
   width?: number | string

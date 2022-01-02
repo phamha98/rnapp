@@ -5,10 +5,11 @@ import {
   TextProps,
   ColorValue,
   TextInput,
+  TextInputProps
 } from 'react-native'
 import {StyleSheet, Text, View} from 'react-native'
-import {rnColor} from './color'
-interface InputProps {
+import {rnColor} from './res/color'
+interface InputProps extends TextInputProps{
   // style?: TextStyle
   // colorReference?: rnColor
   // backgroundColor?: rnColor | string
@@ -20,9 +21,12 @@ interface InputProps {
   // italic?: boolean
   // size?: number
   valueInit?: string | undefined
+  onChangeText?: ((text: string) => void) | undefined;
+
 }
 
  
+ const InputCoreD: React.ForwardRefExoticComponent<InputProps & React.RefAttributes<View>>;
 
 //React.ForwardRefRenderFunction<InputHandle, InputProps> = (
 const InputCoreC=forwardRef((props: {name: string},ref: Ref<{SayHi:Function}>)=> {

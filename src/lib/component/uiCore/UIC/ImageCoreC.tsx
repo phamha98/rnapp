@@ -10,7 +10,7 @@ import {
   ImageResizeMode,
 } from 'react-native'
 import {StyleSheet, Text, View, Image} from 'react-native'
-import {rnColor} from './color'
+import {rnColor} from './res/color'
 interface Props {
   source?: ImageSourcePropType|any
   width?: string | number | undefined

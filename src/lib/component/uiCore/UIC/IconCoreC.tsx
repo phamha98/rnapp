@@ -1,6 +1,6 @@
 import React from 'react'
 import {StyleSheet, Text, View, ViewProps, ViewStyle} from 'react-native'
-import {rnColor} from '../color'
+import {rnColor} from './res/color'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import EvilIcons from 'react-native-vector-icons/EvilIcons'
 import FontAwesome from 'react-native-vector-icons/FontAwesome'
@@ -27,7 +27,7 @@ import {
   IoniconsFont,
   MaterialCommunityIconsFont,
   MaterialIconsFont,
-} from './font'
+} from './res/font'
 import {thisExpression} from '@babel/types'
 
 interface AntDesignProps extends IconProps {
