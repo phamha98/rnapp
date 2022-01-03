@@ -1,46 +1,62 @@
-import React, {useState, forwardRef, useImperativeHandle,Ref} from 'react'
+import React, {
+  useState,
+  forwardRef,
+  useImperativeHandle,
+  Ref,
+  LegacyRef,
+} from 'react'
 import {
   TextStyle,
   ViewStyle,
   TextProps,
   ColorValue,
   TextInput,
-  TextInputProps
+  TextInputProps,
 } from 'react-native'
 import {StyleSheet, Text, View} from 'react-native'
 import {rnColor} from './res/color'
-interface InputProps extends TextInputProps{
-  // style?: TextStyle
-  // colorReference?: rnColor
-  // backgroundColor?: rnColor | string
-  // color?: string | rnColor | ColorValue
-
-  // lower?: boolean
-  // bold?: boolean | number
-  // center?: boolean
-  // italic?: boolean
-  // size?: number
-  valueInit?: string | undefined
-  onChangeText?: ((text: string) => void) | undefined;
-
+import {useRef} from 'react'
+export type CountdownHandle = {
+  getValue: () => void
+  check?: () => void
+  focus?: () => void
+  clear?: () => void
 }
 
- 
- const InputCoreD: React.ForwardRefExoticComponent<InputProps & React.RefAttributes<View>>;
+interface Props extends TextInputProps {
+  placeholder?: string
+}
 
-//React.ForwardRefRenderFunction<InputHandle, InputProps> = (
-const InputCoreC=forwardRef((props: {name: string},ref: Ref<{SayHi:Function}>)=> {
-  const [value1, setValue1] = useState('')
-  useImperativeHandle(ref, () => ({ SayHi }));
-  function SayHi() {console.log("Saying hello from: "); }
+const InputCore = React.forwardRef<CountdownHandle, Props>((props, ref) => {
+  React.useImperativeHandle(ref, () => ({
+    // start() has type inferrence here
+
+    check () {
+      alert(value) //cannot find name alert, confirm, event =>>>"lib": ["es2020","dom"],
+    },
+    getValue () {
+      return value //cannot find name alert, confirm, event =>>>"lib": ["es2020","dom"],
+    },
+    focus () {
+      refCore.current.focus()
+    },
+    clear () {
+      setValue('')
+    },
+  }))
+  const [value, setValue] = useState('')
+  const refCore: any = useRef()
   return (
     <TextInput
-      value={value1}
-      onChangeText={v => setValue1(v)}
-      // {...props}
-      // style={[styleProps, props.style]}
+      ref={refCore}
+      value={value}
+      onChangeText={setValue}
+      placeholder={props.placeholder}
+      {...props}
     />
   )
 })
-
-export default InputCoreC
+export default InputCore
+InputCore.defaultProps={
+  placeholder:'placeholder'
+}

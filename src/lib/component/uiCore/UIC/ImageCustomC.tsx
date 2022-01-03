@@ -1,18 +1,29 @@
-import {ViewCore,COLOR} from './index'
+import ViewCoreC from './ViewCoreC'
 import React, {useState, useRef, useEffect} from 'react'
-import {ActivityIndicator, Image} from 'react-native'
-export default function ImageCustom ({
-  source,
-  width,
-  height,
-  resizeMode = 'contain',
-  style,
-  ...rest
-}) {
+import {
+  ActivityIndicator,
+  Image,
+  ImageProps,
+  ImageResizeMode,
+  ImageSourcePropType,
+  ImageStyle,
+  StyleProp,
+  ViewStyle,
+} from 'react-native'
+
+interface Props extends ViewStyle{
+  source?: ImageSourcePropType | any
+  width?: string | number | undefined
+  height?: string | number
+  resizeMode?: ImageResizeMode | undefined
+  style?: StyleProp<ImageStyle>
+}
+const ImageCustom: React.FC<Props | ImageProps> = props => {
+  const {source, width, height, resizeMode = 'contain', style, ...rest} = props
   if (!source || source === null || source === undefined) return null
   const [load, setLoad] = useState(true)
   const [isErr, setIsErr] = useState(false)
-  const refImg = useRef()
+  const refImg:any = useRef()
   const _onLoadStart = () => {
     setLoad(true)
     refImg.current = setTimeout(() => {
@@ -29,9 +40,9 @@ export default function ImageCustom ({
     }
   }, [])
   return (
-    <ViewCore midle>
+    <ViewCoreC midle >
       <Image
-        source={isErr ? require('@images/noimage.jpg') : source}
+        source={isErr ? require('./noimage.jpg') : source}
         style={[{width: width, height: height, resizeMode: resizeMode}, style]}
         {...rest}
         onLoadStart={_onLoadStart}
@@ -40,12 +51,12 @@ export default function ImageCustom ({
       />
       {load && (
         <ActivityIndicator
-          color={COLOR.green1}
+          color={'#1868ae'}
           size={20}
           style={{position: 'absolute'}}
         />
       )}
-    </ViewCore>
+    </ViewCoreC>
   )
 }
 

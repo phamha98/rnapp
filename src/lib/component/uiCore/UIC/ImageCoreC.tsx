@@ -8,6 +8,7 @@ import {
   ImageStyle,
   ImageSourcePropType,
   ImageResizeMode,
+  StyleProp,
 } from 'react-native'
 import {StyleSheet, Text, View, Image} from 'react-native'
 import {rnColor} from './res/color'
@@ -16,7 +17,7 @@ interface Props {
   width?: string | number | undefined
   height?: string | number
   resizeMode?: ImageResizeMode | undefined
-  style?: ImageStyle
+  style?:  StyleProp<ImageStyle>
 }
 const ImageCoreC: React.FC<Props|ImageProps> = props => {
   const styleProps: Array<any> = [

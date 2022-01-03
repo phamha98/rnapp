@@ -1,15 +1,22 @@
 import React, {useState, forwardRef, useImperativeHandle} from 'react'
-import {StyleSheet, Text, View} from 'react-native'
+import {StyleProp, StyleSheet, Text, View, ViewStyle} from 'react-native'
 import {Picker} from '@react-native-picker/picker'
-import {isEmpty} from 'underscore'
-import {ViewCore} from './index'
-const LabelPicker = (
-  {data, label,style, valueInit, styleLabel, stylePicker, ...rest},
+// import {isEmpty} from 'underscore'
+import ViewCoreC from './ViewCoreC'
+interface Props extends ViewStyle{
+  data: Array<any>
+  label: string
+  style: StyleProp<ViewStyle>
+  valueInit: string | undefined
+  styleLabel: StyleProp<ViewStyle>
+  stylePicker: StyleProp<ViewStyle>
+}
+const LabelPicker: React.FC<Props> = (
+  {data, label, style, valueInit, styleLabel, stylePicker, ...rest},
   ref,
 ) => {
-  //data=[{name/value}]
-
-  if (isEmpty(data)) return null
+  // if (isEmpty(data)) return null
+  if (!data) return null
   const [value, setValue] = useState(valueInit ? valueInit : data[0])
   useImperativeHandle(ref, () => ({
     getValue: () => {
@@ -17,7 +24,7 @@ const LabelPicker = (
     },
   }))
   return (
-    <ViewCore
+    <ViewCoreC
       height={50}
       row
       centerHorizontal
@@ -40,7 +47,7 @@ const LabelPicker = (
           />
         ))}
       </Picker>
-    </ViewCore>
+    </ViewCoreC>
   )
 }
 export default forwardRef(LabelPicker)

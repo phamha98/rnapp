@@ -6,7 +6,8 @@ import {
   TouchableHighlightProps,
   TouchableNativeFeedbackProps,
   TabBarIOSItemProps,
-  ColorValue
+  ColorValue,
+  StyleProp
 } from 'react-native';
 import {StyleSheet, Text, View,} from 'react-native'
 import {rnColor} from './res/color'
@@ -17,7 +18,7 @@ interface PropsViewCore extends ViewStyle {
   square?: number
   midle?: boolean
   row?: boolean
-  style?: ViewStyle
+  style?: StyleProp<ViewStyle>
   flex1?: boolean
   centerHorizontal?: boolean
   backgroundColorReference?: rnColor
@@ -47,3 +48,10 @@ const ViewCoreC: React.FC<PropsViewCore> = props => {
 }
 
 export default ViewCoreC
+/***
+ * 
+ * 
+ * 
+ * PropsWithChildren<Props>
+ * PropsWithChildren<Props>)
+ */

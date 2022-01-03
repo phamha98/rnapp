@@ -1,5 +1,5 @@
 import {Alert} from 'react-native'
-import {AlertMessage} from '@component'
+import {AlertMessage} from '@lib'
 import { COLOR } from 'src/res'
 /**
  *

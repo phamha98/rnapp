@@ -1,8 +1,7 @@
-import {IconCore, ViewCore} from '@component'
 import {DropDownHolder} from '@utils'
 import React from 'react'
 import DropdownAlert from 'react-native-dropdownalert'
-import {COLOR, ICON} from '@res'
+import {COLOR, ICON} from '../res'
 const time_drop=1000
 export default function DropdownAlertCustom ({...rest}) {
   return (

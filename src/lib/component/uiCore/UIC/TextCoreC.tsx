@@ -13,6 +13,7 @@ interface Props extends TextProps {
   bold?: boolean | number
   center?: boolean
   italic?: boolean
+  underline?: boolean
   size?: number
 }
 const TextCoreC: React.FC<Props> = props => {
@@ -23,6 +24,9 @@ const TextCoreC: React.FC<Props> = props => {
       fontSize: props.size,
     },
     props.center && {textAlign: 'center'},
+    props.italic && {fontStyle: 'italic'},
+    props.bold && {fontWeight: 'bold'},
+    props.underline && {textDecorationLine: 'underline'},
   ]
   const Children = () => {
     if (props.UPPER) return `${props.children}`.toUpperCase()
@@ -35,5 +39,9 @@ const TextCoreC: React.FC<Props> = props => {
     </Text>
   )
 }
-
 export default TextCoreC
+const styles = StyleSheet.create({
+  font: {
+    fontWeight: 'bold',
+  },
+})
