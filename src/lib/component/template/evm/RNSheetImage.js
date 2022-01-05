@@ -1,7 +1,7 @@
 import React, {useRef, forwardRef, useImperativeHandle, useState} from 'react'
 import {StyleSheet, ScrollView} from 'react-native'
 import RBSheet from 'react-native-raw-bottom-sheet'
-import {ViewCore, ButtonIcon, screen_height,COLOR} from '../uiCore'
+import {ViewCore, ButtonIcon, screen_height,COLOR} from '../../uiCore'
 import {isEmpty} from 'underscore'
 const myModule = require('react-native-image-picker');
 import * as ImagePicker from 'react-native-image-picker'

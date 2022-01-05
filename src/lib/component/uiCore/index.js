@@ -17,6 +17,7 @@ export * from './res'
  */
 export { default as ViewCoreC } from './UIC/ViewCoreC'
 export { default as TouchableCoreC } from './UIC/TouchableCoreC'
+/**npm install react-native-vector-icons */
 export { default as IconCoreC } from './UIC/IconCoreC'
 export { default as TextCoreC } from './UIC/TextCoreC'
 export { default as ImageCoreC } from './UIC/ImageCoreC'
@@ -25,6 +26,6 @@ export { default as ImageCoreC } from './UIC/ImageCoreC'
 
 export {default as AvatarCoreC} from './UIC/AvatarCoreC';
 export * from './UIC/Button';
-/**ref */
+/**npm install @react-native-picker/picker */
 // export {default as LabelPicker} from './LabelPicker'
 export { default as InputCoreC } from './UIC/InputCoreC'
