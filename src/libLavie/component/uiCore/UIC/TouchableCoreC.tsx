@@ -1,5 +1,14 @@
 import React from 'react'
-import {StyleSheet, Text, TouchableOpacity, ViewStyle} from 'react-native'
+import {
+  GestureResponderEvent,
+  Insets,
+  NativeSyntheticEvent,
+  StyleSheet,
+  TargetedEvent,
+  Text,
+  TouchableOpacity,
+  ViewStyle,
+} from 'react-native'
 import {rnColor} from './res/color'
 interface PropsViewCore extends ViewStyle {
   children?: React.ReactNode
@@ -15,6 +24,18 @@ interface PropsViewCore extends ViewStyle {
   backgroundColor?: rnColor | string
   flex?: number
   activeOpacity?: number
+  onBlur?: ((e: NativeSyntheticEvent<TargetedEvent>) => void) | undefined
+  onFocus?: ((e: NativeSyntheticEvent<TargetedEvent>) => void) | undefined
+  onPress?: ((event: GestureResponderEvent) => void) | undefined
+  onPressIn?: ((event: GestureResponderEvent) => void) | undefined
+  onPressOut?: ((event: GestureResponderEvent) => void) | undefined
+  onLongPress?: ((event: GestureResponderEvent) => void) | undefined
+  delayLongPress?: number | undefined
+  delayPressIn?: number | undefined
+  delayPressOut?: number | undefined
+  /** hitSlop={{ top: 12, bottom: 12, left: 12, right: 12 }}*/
+  hitSlop?: Insets | undefined
+  numberOfLines?: number | undefined
 }
 const ViewCoreC: React.FC<PropsViewCore> = props => {
   const styleProps: Array<any> = [
@@ -35,6 +56,13 @@ const ViewCoreC: React.FC<PropsViewCore> = props => {
   ]
   return (
     <TouchableOpacity
+      onPress={props.onPress}
+      onPressIn={props.onPressIn}
+      onPressOut={props.onPressOut}
+      delayLongPress={props.delayLongPress}
+      delayPressIn={props.delayPressIn}
+      delayPressOut={props.delayPressOut}
+      hitSlop={props.hitSlop}
       activeOpacity={props.activeOpacity}
       style={[styleProps, {...props}, props.style]}>
       {props.children}

@@ -2,7 +2,7 @@ import React from 'react'
 import {TextStyle, ViewStyle, TextProps, ColorValue} from 'react-native'
 import {StyleSheet, Text, View} from 'react-native'
 import {rnColor} from './res/color'
-interface Props extends TextProps {
+interface Props extends TextProps, ViewStyle  {
   children?: React.ReactNode
   style?: TextStyle
   colorReference?: rnColor

@@ -5,7 +5,7 @@ import {
   ImageCoreC,
   AvatarCoreC,
   ButtonBasic,
-  InputCoreC,
+  InputCoreC,TouchableCoreC
 } from '@libLavie/component'
 import React, {useRef, useState} from 'react'
 import {Alert, Button, StyleSheet, Text, View, ViewStyle} from 'react-native'
@@ -25,6 +25,8 @@ const screen_details = () => {
         placeholder='nhap tai day'
         placeholderTextColor='red'
       />
+      <TouchableCoreC />
+      <TextCoreC >asf</TextCoreC>
     </ViewCoreC>
   )
 }
