@@ -1,5 +1,5 @@
 import {Alert} from 'react-native'
-import {AlertMessage} from '@lib/component'
+import {AlertMessage} from '../../component'
 /**
  *
  * @param {String} value

@@ -6,7 +6,7 @@ import {
   AvatarCoreC,
   ButtonBasic,
   InputCoreC,
-} from '@lib/component'
+} from '@libLavie/component'
 import React, {useRef, useState} from 'react'
 import {Alert, Button, StyleSheet, Text, View, ViewStyle} from 'react-native'
 

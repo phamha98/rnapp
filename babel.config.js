@@ -7,7 +7,7 @@ const MODULE_RESOLVER = [
     alias: {
       "@assets": "./src/assets",
       "@config": "./src/config",
-      "@lib": "./src/lib",
+      "@libLavie": "./src/libLavie",
       "@module": "./src/module",
       "@service": "./src/service",
 
@@ -19,6 +19,7 @@ const MODULE_RESOLVER = [
       "@module-redux": "./src/module/redux",
       "@module-saga": "./src/module/saga",
 
+      "@libLavie/component": "./src/libLavie/component",
 
       // "@lib-rn-uicore": "./src/lib/rn-uicore",
       // "@lib-rn-action": "./src/lib/rn-action",
