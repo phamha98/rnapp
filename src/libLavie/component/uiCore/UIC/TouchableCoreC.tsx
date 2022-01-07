@@ -37,7 +37,7 @@ interface PropsViewCore extends ViewStyle {
   hitSlop?: Insets | undefined
   numberOfLines?: number | undefined
 }
-const ViewCoreC: React.FC<PropsViewCore> = props => {
+const TouchableCoreC: React.FC<PropsViewCore> = props => {
   const styleProps: Array<any> = [
     props.midle && {alignItems: 'center', justifyContent: 'center'},
     props.flex1 && {flex: 1},
@@ -70,4 +70,4 @@ const ViewCoreC: React.FC<PropsViewCore> = props => {
   )
 }
 
-export default ViewCoreC
+export default TouchableCoreC
